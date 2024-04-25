@@ -1,4 +1,8 @@
+# Data files
 **/*.mat
 **/*.fig
 **/*.png
 **/*.jpg
+
+# Executables
+**/*.exe

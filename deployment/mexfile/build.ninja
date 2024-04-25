@@ -1,0 +1,57 @@
+# CompilerName=mingw64
+# Mode=optim
+ninja_required_version = 1.3
+
+# Basic folders
+root = .
+builddir = $root/build/win64
+matlabdir = D:/Applications/MATLAB
+startdir = C:/Users/hdt.OJ/OneDrive - OJ Electronics A S/Thesis/source/houseHeat_TD3_flowRate
+
+# Toolchain information
+cc = D:\Applications\mingw81\bin\gcc
+cxx = D:\Applications\mingw81\bin\g++
+linker = D:\Applications\mingw81\bin\gcc
+linkerxx = D:\Applications\mingw81\bin\g++
+
+cflags =  -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I "C:\Users\hdt.OJ\OneDrive - OJ Electronics A S\Thesis\source\deployment\mexfile" -I "C:\Users\hdt.OJ\OneDrive - OJ Electronics A S\Thesis\source\houseHeat_TD3_flowRate" -I "C:\Users\hdt.OJ\OneDrive - OJ Electronics A S\Thesis\source\deployment\mexfile\interface" -I "D:\Applications\MATLAB\extern\include" -I "." -DMODEL=evaluatePolicy_mex -D__USE_MINGW_ANSI_STDIO=1 -DMW_NEEDS_VERSION_H -msse2 -fopenmp 
+
+cxxflags =  -c -fexceptions -fno-omit-frame-pointer -m64 -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c++11 -I "C:\Users\hdt.OJ\OneDrive - OJ Electronics A S\Thesis\source\deployment\mexfile" -I "C:\Users\hdt.OJ\OneDrive - OJ Electronics A S\Thesis\source\houseHeat_TD3_flowRate" -I "C:\Users\hdt.OJ\OneDrive - OJ Electronics A S\Thesis\source\deployment\mexfile\interface" -I "D:\Applications\MATLAB\extern\include" -I "." -DMODEL=evaluatePolicy_mex -D__USE_MINGW_ANSI_STDIO=1 -DMW_NEEDS_VERSION_H -msse2 -fopenmp 
+
+ldflags =  -m64 -Wl,--no-undefined -shared -static -L"D:\Applications\MATLAB\extern\lib\win64\mingw64" -llibmx -llibmex -llibmat -lm -llibmwlapack -llibmwblas -llibMatlabDataArray -llibMatlabEngine  -o "evaluatePolicy_mex.mexw64" -L"$matlabdir\extern\lib\win64\mingw64" -llibmwblas -llibemlrt -llibcovrt -llibut -llibmwmathutil -fopenmp
+
+linkobjs = 
+
+# Build Rules
+rule cc
+    command = $cc $cflags $in -o $out
+
+rule cxx
+    command = $cxx $cxxflags $in -o $out
+
+rule link
+    command = $linker @$out.rsp $linkobjs $ldflags
+    rspfile = $out.rsp
+    rspfile_content = $in
+
+rule linkxx
+    command = $linkerxx $in $linkobjs $ldflags
+
+# Build
+build $builddir/evaluatePolicy_data.o : cxx $root/evaluatePolicy_data.cpp
+build $builddir/rt_nonfinite.o : cxx $root/rt_nonfinite.cpp
+build $builddir/evaluatePolicy_initialize.o : cxx $root/evaluatePolicy_initialize.cpp
+build $builddir/evaluatePolicy_terminate.o : cxx $root/evaluatePolicy_terminate.cpp
+build $builddir/evaluatePolicy.o : cxx $root/evaluatePolicy.cpp
+build $builddir/predict.o : cxx $root/predict.cpp
+build $builddir/unaryElementwise.o : cxx $root/unaryElementwise.cpp
+build $builddir/_coder_evaluatePolicy_api.o : cxx $root/interface/_coder_evaluatePolicy_api.cpp
+build $builddir/_coder_evaluatePolicy_mex.o : cxx $root/interface/_coder_evaluatePolicy_mex.cpp
+build $builddir/addBiasApplyActivation.o : cxx $root/addBiasApplyActivation.cpp
+build $builddir/elementwiseOperationInPlace.o : cxx $root/elementwiseOperationInPlace.cpp
+build $builddir/ScalingLayer.o : cxx $root/ScalingLayer.cpp
+build $builddir/_coder_evaluatePolicy_info.o : cxx $root/interface/_coder_evaluatePolicy_info.cpp
+build $builddir/cpp_mexapi_version.o : cxx $matlabdir/extern/version/cpp_mexapi_version.cpp
+
+# Link
+build $root\evaluatePolicy_mex.mexw64 : linkxx $builddir/evaluatePolicy_data.o $builddir/rt_nonfinite.o $builddir/evaluatePolicy_initialize.o $builddir/evaluatePolicy_terminate.o $builddir/evaluatePolicy.o $builddir/predict.o $builddir/unaryElementwise.o $builddir/_coder_evaluatePolicy_api.o $builddir/_coder_evaluatePolicy_mex.o $builddir/addBiasApplyActivation.o $builddir/elementwiseOperationInPlace.o $builddir/ScalingLayer.o $builddir/_coder_evaluatePolicy_info.o $builddir/cpp_mexapi_version.o 

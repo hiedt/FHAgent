@@ -1,0 +1,4 @@
+set PATH=D:\Applications\mingw81\bin;D:\Applications\MATLAB\extern\include\win64;D:\Applications\MATLAB\extern\include;D:\Applications\MATLAB\simulink\include;D:\Applications\MATLAB\lib\win64;%MATLAB_BIN%;%PATH%
+set INCLUDE=D:\Applications\mingw81\include;D:\Applications\mingw81\lib\gcc\x86_64-w64-mingw32\8.1.0\include\c++;D:\Applications\mingw81\lib\gcc\x86_64-w64-mingw32\8.1.0\include;D:\Applications\mingw81\lib\gcc\x86_64-w64-mingw32\8.1.0\include\c++\x86_64-w64-mingw32;D:\Applications\mingw81\lib\gcc\x86_64-w64-mingw32\8.1.0\include\c++\backward;D:\Applications\mingw81\x86_64-w64-mingw32\include;%INCLUDE%
+set LIB=D:\Applications\mingw81\lib;;%LIB%
+set LIBPATH=D:\Applications\MATLAB\extern\lib\win64;%LIBPATH%
