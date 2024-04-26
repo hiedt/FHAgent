@@ -1,2 +1,0 @@
-D:\Applications\mingw81\bin\ar.exe qc evaluatePolicy.a CMakeFiles/evaluatePolicy.dir/evaluatePolicy_data.cpp.obj CMakeFiles/evaluatePolicy.dir/evaluatePolicy_initialize.cpp.obj CMakeFiles/evaluatePolicy.dir/evaluatePolicy_terminate.cpp.obj CMakeFiles/evaluatePolicy.dir/evaluatePolicy.cpp.obj CMakeFiles/evaluatePolicy.dir/predict.cpp.obj CMakeFiles/evaluatePolicy.dir/elementwiseOperationInPlace.cpp.obj CMakeFiles/evaluatePolicy.dir/addBiasApplyActivation.cpp.obj CMakeFiles/evaluatePolicy.dir/ScalingLayer.cpp.obj
-D:\Applications\mingw81\bin\ranlib.exe evaluatePolicy.a
