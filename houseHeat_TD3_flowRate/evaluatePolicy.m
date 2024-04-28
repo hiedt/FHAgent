@@ -10,3 +10,7 @@ if isempty(policy)
 end
 % evaluate the policy
 action1 = getAction(policy,observation1);
+
+% Hieu's edit - cast action1 from double to float
+% to fit on STM32L452RE MCU
+action1 = single(action1);

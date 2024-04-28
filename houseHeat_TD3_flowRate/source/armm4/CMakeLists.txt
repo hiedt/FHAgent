@@ -5,9 +5,6 @@
 cmake_minimum_required(VERSION 3.12)
 project(evaluatePolicy)
 
-# # Add subdir CMSIS-DSP
-# add_subdirectory("D:/Applications/CMSIS-DSP/")
-
 # Propagate the CMAKE_EXPORT_COMPILE_COMMANDS variable from the 
 # environment if it is defined as an environment variable, but not as a 
 # CMake variable. This is to work around a bug in CMake 3.19 when the 
@@ -111,10 +108,10 @@ target_compile_definitions(evaluatePolicy PRIVATE -DMODEL=evaluatePolicy)
 target_include_directories(evaluatePolicy PUBLIC $<BUILD_INTERFACE:${START_DIR}>
     $<INSTALL_INTERFACE:$<INSTALL_PREFIX>>
     C:/Users/hdt.OJ/OneDrive\ -\ OJ\ Electronics\ A\ S/Thesis/source/houseHeat_TD3_flowRate
-    D:/Applications/CMSIS-DSP/
+    $<BUILD_INTERFACE:${MATLAB_ROOT}/extern/include>
     D:/Applications/CMSIS-DSP/Include
     D:/Applications/STM32Cube_FW_L4_V1.18.0/Drivers/CMSIS/Include
-    $<BUILD_INTERFACE:${MATLAB_ROOT}/extern/include>)
+    )
 
 # Specify library link dependencies for target "evaluatePolicy".  CMake 
 # generator expressions are used to create a CMakeLists.txt file that 
@@ -125,6 +122,16 @@ target_link_libraries(evaluatePolicy INTERFACE $<$<BOOL:${FOUND_LIBM}>:m>
     OpenMP::OpenMP_C
     OpenMP::OpenMP_CXX)
 
+# Hieu's addition to export related header files
+install(TARGETS evaluatePolicy
+        EXPORT evaluatePolicy_target
+        ARCHIVE DESTINATION D:/Projects/td3_arm/lib)
+
+get_target_property(MYLIB_INCL_DIRS evaluatePolicy INTERFACE_INCLUDE_DIRECTORIES)
+foreach(INCL_DIR ${MYLIB_INCL_DIRS})
+    install(DIRECTORY ${INCL_DIR}
+        DESTINATION D:/Projects/td3_arm/include)
+endforeach()
 
 ###########################################################################
 ## Build success message
