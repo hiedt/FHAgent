@@ -3,6 +3,8 @@
 **/*.fig
 **/*.png
 **/*.jpg
+**/*.emf
+**/*.eps
 
 # Executables
 **/*.exe

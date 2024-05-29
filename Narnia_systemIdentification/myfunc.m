@@ -1,9 +1,7 @@
-function [A,B,C,D,K,x0] = myfunc(par,Ts)
-    A = [0 0 1; -par(1)*par(2) 0 -par(2)*par(3); 0 0 0];
-    B = [0; par(2); 0];
-    C = [1 0 0];
-    D = zeros(1,1);
-    K = [0;  par(1)*par(2); 0];
-    x0 = [0; 0; 0]; % A guess of initial state
+function [A,B,C,D] = myfunc(par1,par2,par3,par4,Ts)
+    A = [-par2*par3-par3*par4 par2*par3; par1*par2 -par1*par2];
+    B = [0 par3*par4; par1 0];
+    C = eye(2);
+    D = zeros(2,2);
 end
 
