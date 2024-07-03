@@ -9,15 +9,15 @@ function export_system_dynamics(figname, T_a, T_f, T_out, u, lpos)
     % First plot has 3 lines: reference, air temp, outside temp
     ax1 = nexttile;
     hold on;
-    % Draw a floor temp line
-    plot(T_f, "Color", "#D95319", "LineWidth", line_width);
     % Draw an air temp line
     plot(T_a, "Color", "#0072BD", "LineWidth", line_width);
+    % Draw a floor temp line
+    plot(T_f, "Color", "#D95319", "LineWidth", line_width);
     % Draw an outside temp line
     plot(T_out, "Color", "#77AC30", "LineWidth", line_width);
 
     grid on;
-    legend(ax1, {'Floor', 'Air', 'Outside'},...
+    legend(ax1, {'Floor'},...
         "FontSize", font_size-4,...
         "Location", lpos);
     ylabel('Temperature (°C)', 'FontSize', font_size);

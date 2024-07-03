@@ -1,0 +1,32 @@
+-IC:/Users/hdt.OJ/OneDrive\ -\ OJ\ Electronics\ A\ S/Thesis/source/Narnia_systemIdentification
+-IC:/ProgramData/MATLAB/SupportPackages/R2023b/toolbox/shared/supportpackages/stm32/include
+-IC:/Users/hdt.OJ/OneDrive\ -\ OJ\ Electronics\ A\ S/Thesis/source/Narnia_systemIdentification/Narnia_PIL_ert_rtw
+-ID:/Applications/MATLAB/extern/include
+-ID:/Applications/MATLAB/simulink/include
+-ID:/Applications/MATLAB/rtw/c/src
+-ID:/Applications/MATLAB/rtw/c/src/ext_mode/common
+-ID:/Applications/MATLAB/rtw/c/ert
+-ID:/Applications/MATLAB/toolbox/coder/xcp/src/target/server/include
+-ID:/Applications/MATLAB/toolbox/coder/xcp/src/target/server/common
+-ID:/Applications/MATLAB/toolbox/coder/xcp/src/target/server/protocol/src
+-ID:/Applications/MATLAB/toolbox/coder/xcp/src/target/server/protocol/include
+-ID:/Applications/MATLAB/toolbox/coder/xcp/src/target/server/transport/include
+-ID:/Applications/MATLAB/toolbox/coder/xcp/src/target/server/transport/src
+-ID:/Applications/MATLAB/toolbox/coder/xcp/src/target/server/platform/include
+-ID:/Applications/MATLAB/toolbox/coder/xcp/src/target/server/platform/default
+-ID:/Applications/MATLAB/toolbox/coder/xcp/src/target/ext_mode/include
+-ID:/Applications/MATLAB/toolbox/coder/xcp/src/target/ext_mode/src
+-ID:/Applications/MATLAB/toolbox/coder/rtiostream/src
+-ID:/Applications/MATLAB/toolbox/target/shared/armcortexmbase/scheduler/include
+-ID:/Applications/MATLAB/toolbox/target/shared/armcortexmbase/xcp/include
+-ID:/Applications/MATLAB/rtw/c/src/ext_mode/serial
+-ID:/Applications/MATLAB/toolbox/target/shared/svd/common/include
+-IC:/ProgramData/MATLAB/SupportPackages/R2023b/3P.instrset/cmsis.instrset/CMSIS/Core/Include
+-IC:/ProgramData/MATLAB/SupportPackages/R2023b/3P.instrset/cmsis_dsp.instrset/Include
+-IC:/ProgramData/MATLAB/SupportPackages/R2023b/3P.instrset/cmsis_dsp.instrset/Include/dsp
+-ID:/Projects/Thesis/uwg5/Drivers/STM32L4xx_HAL_Driver/Inc
+-ID:/Projects/Thesis/uwg5/Drivers/STM32L4xx_HAL_Driver/Inc/Legacy
+-ID:/Projects/Thesis/uwg5/Drivers/CMSIS/Device/ST/STM32L4xx/Include
+-ID:/Projects/Thesis/uwg5/Drivers/CMSIS/Include
+-ID:/Projects/Thesis/uwg5/Core/Inc
+-I../Core/Inc
