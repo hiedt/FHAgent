@@ -1,0 +1,10 @@
+config load "D:\Projects\Thesis\uwg5\uwg5.ioc"
+project toolchain STM32CubeIDE
+
+SetStructure Advanced
+
+project setCustomFWPath ""
+
+project generate 
+
+exit wait

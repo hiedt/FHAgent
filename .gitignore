@@ -5,6 +5,7 @@
 **/*.jpg
 **/*.emf
 **/*.eps
+graphics/
 
 # Executables
 **/*.exe
