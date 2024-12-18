@@ -6,6 +6,7 @@
 **/*.emf
 **/*.eps
 graphics/
+!images/*.png
 
 # Executables
 **/*.exe
