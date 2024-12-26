@@ -1,0 +1,94 @@
+\documentclass{caltech_thesis}
+\usepackage[hyphens]{url}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\graphicspath{{figures/}}
+\usepackage{todonotes}
+%% Tentative: newtx for better-looking Times
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext,newtxmath}
+\usepackage{multicol}
+
+% For mathematical formulas
+\usepackage{float}
+\usepackage{amsmath, amsfonts}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{physics}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+% For source code
+\usepackage{listings}
+
+% For floated figures
+\usepackage[labelfont=bf]{caption}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+% For writing pseudo-code
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+
+% Must use Biblatex to produce the Published Contents and Contributions, per-chapter bibliography (if desired), etc.
+\usepackage[
+    backend=biber,natbib,
+    % IMPORTANT: load a style suitable for your discipline
+    style=ieee
+]{biblatex}
+\usepackage{subfiles}
+
+\usepackage{fancyhdr}
+% Name of your .bib file(s)
+\addbibresource{bibliographies/blogs.bib}
+\addbibresource{bibliographies/rlbible.bib}
+\addbibresource{bibliographies/main.bib}
+
+\begin{document}
+
+% Do remember to remove the square bracket!
+\title{Feasibility Study of Applying Reinforcement Learning to Heat Control}
+\author{Hieu Dao Trung}
+
+\degreeaward{Master of Science in Mechatronics}                 % Degree to be awarded
+\university{University of Southern Denmark}    % Institution name
+\department{Institute of Mechanical and Electrical Engineering}    % Institution name
+\address{Sønderborg, Sønderjylland, Denmark}                     % Institution address
+\unilogo{figures/SDU_logo_black.png}    % Institution logo
+\copyyear{2024}  % Year (of graduation) on the diploma
+\defenddate{11/06/2024}          % Date of Defense
+
+\orcid{4114927}
+\projectid{T350029402}
+
+%% IMPORTANT: Select ONE of the rights statement below.
+% \rightsstatement{All rights reserved\todo[size=\footnotesize]{Choose one from the choices in the source code!! And delete this \texttt{todo} when you're done with that. :-)}}
+\rightsstatement{All rights reserved}
+% \rightsstatement{All rights reserved except where otherwise noted}
+% \rightsstatement{Some rights reserved. This thesis is distributed under a [name license, e.g., ``Creative Commons Attribution-NonCommercial-ShareAlike License'']}
+
+%%  If you'd like to remove the logo from your title page, simply remove the "[logo]" text from the \maketitle command
+\maketitle[logo]
+
+\subfile{sections/00_preface}
+\subfile{sections/01_introduction}
+\subfile{sections/02_current_baseline}
+\subfile{sections/03_literature_review}
+\subfile{sections/04_controller_design}
+\subfile{sections/05_hw_integration}
+\subfile{sections/06_eval_conclusion}
+
+\printbibliography[heading=bibintoc]
+
+\appendix
+% \chapter{Consent Form}
+\subfile{sections/apA_source_code}
+
+\printindex
+
+%% Pocket materials at the VERY END of thesis
+% \pocketmaterial
+% \extrachapter{Pocket material: TBD} 
+
+
+\end{document}

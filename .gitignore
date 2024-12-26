@@ -5,8 +5,14 @@
 **/*.jpg
 **/*.emf
 **/*.eps
+**/*.pdf
 graphics/
+
+# Exception for compiling TEX report
 !images/*.png
+!report/figures/*.png
+!report/figures/*.jpg
+!report/figures/*.eps
 
 # Executables
 **/*.exe
